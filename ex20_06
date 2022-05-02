@@ -1,0 +1,33 @@
+package hw;
+
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeMap;
+
+public class ex20_06 {
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < 5000000; i++) {
+            list.add(i);
+        }
+        LinkedList<Integer> linkedList = new LinkedList<>(list);
+
+        long start = System.currentTimeMillis();
+        ListIterator<Integer> listIterator = linkedList.listIterator();
+        while (listIterator.hasNext()) {
+            listIterator.next();
+        }
+        long end = System.currentTimeMillis();
+
+        System.out.println("Iterator time :" + (end - start) + " millis");
+
+        long getstart = System.currentTimeMillis();
+        for (int i = 0; i < 5000000; i++) {
+            linkedList.get(i);
+        }
+        long getend = System.currentTimeMillis();
+
+        System.out.println("get(index) time :" + (getend - getstart) + " millis");
+    }
+}
