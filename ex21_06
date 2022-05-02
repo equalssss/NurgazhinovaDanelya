@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeMap;
 
-public class Exercise21_06 {
+public class ex21_06 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         Map<String, Integer> treeMap = new TreeMap<>();
